@@ -14,7 +14,7 @@ Xianglong Yan, Chengzhu Bao, [Zhiteng Li](https://zhitengli.github.io), Tianao Z
 
 ---
 
-Figure 1 in the main paper demonstrates that our proposed ARB-LLM<sub>RC</sub> outperforms the previous state-of-the-art binary PTQ method, BiLLM, across all scales of the OPT model family. Furthermore, our binarized model surpasses full-precision models of similar size. For example, the memory footprint of the binarized OPT-13B is comparable to that of the full-precision OPT-2.7B, yet the binarized model achieves better performance.
+LLaMA performance on 7 zero-shot Question Answering (QA) datasets. PT$^2$-LLM yields the best accuracy at equal memory cost.
 
 <p align="center">
   <img width="60%" src="figs/teaser.png">
