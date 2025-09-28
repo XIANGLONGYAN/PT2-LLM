@@ -1,5 +1,23 @@
 # PT<sup>2</sup>-LLM: Post-Training Ternarization for Large Language Models
 
+<p align="center">
+  <a href="">
+    <img src="https://img.shields.io/badge/Paper-arXiv-red?logo=arxiv&logoSvg">
+  </a>
+  <a href="https://github.com/XIANGLONGYAN/PT2-LLM/releases/tag/paper/supp.pdf">
+    <img src="https://img.shields.io/badge/Supplementary_material-Paper-orange.svg">
+<!--   </a>
+  <a href="https://github.com/XIANGLONGYAN/PT2-LLM/releases/tag/paper">
+    <img src="https://img.shields.io/github/downloads/frakenation/SODiff/total.svg"> -->
+  </a>
+  <a href="[https://github.com/frakenation/SODiff](https://github.com/XIANGLONGYAN/PT2-LLM)">
+    <img src="https://visitor-badge.laobi.icu/badge?page_id=frakenation.SODiff&right_color=violet">
+  </a>
+  <a href="https://github.com/XIANGLONGYAN/PT2-LLM">
+    <img src="https://img.shields.io/github/stars/frakenation/SODiff?style=social">
+  </a>
+</p>
+
 Xianglong Yan, Chengzhu Bao, [Zhiteng Li](https://zhitengli.github.io), Tianao Zhang, [Haotong Qin](https://htqin.github.io/), [Ruobing Xie](https://ruobingxie.github.io/), Xingwu Sun, and [Yulun Zhang](http://yulunzhang.com/), "PT²-LLM: Post-Training Ternarization for Large Language Models", arXiv, 2025
 
 #### 🔥🔥🔥 News
