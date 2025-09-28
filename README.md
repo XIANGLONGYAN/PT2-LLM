@@ -4,7 +4,7 @@
   <a href="">
     <img src="https://img.shields.io/badge/Paper-arXiv-red?logo=arxiv&logoSvg">
   </a>
-  <a href="https://github.com/XIANGLONGYAN/PT2-LLM/releases/tag/paper/supp.pdf">
+  <a href="https://github.com/XIANGLONGYAN/PT2-LLM/releases/tag/supp/supp_v2.pdf">
     <img src="https://img.shields.io/badge/Supplementary_material-Paper-orange.svg">
 <!--   </a>
   <a href="https://github.com/XIANGLONGYAN/PT2-LLM/releases/tag/paper">
