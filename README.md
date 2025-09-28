@@ -13,3 +13,43 @@ Xianglong Yan, Chengzhu Bao, [Zhiteng Li](https://zhitengli.github.io), Tianao Z
 ![](figs/overview.png)
 
 ---
+
+Figure 1 in the main paper demonstrates that our proposed ARB-LLM<sub>RC</sub> outperforms the previous state-of-the-art binary PTQ method, BiLLM, across all scales of the OPT model family. Furthermore, our binarized model surpasses full-precision models of similar size. For example, the memory footprint of the binarized OPT-13B is comparable to that of the full-precision OPT-2.7B, yet the binarized model achieves better performance.
+
+<p align="center">
+  <img width="60%" src="figs/teaser.png">
+</p>
+
+## ⚒️ TODO
+
+* [ ] Complete this repository
+
+## 🔗 Contents
+
+- [ ] Post-training quantization
+- [ ] Models
+- [x] [Results](#Results)
+- [ ] [Citation](#Citation)
+- [x] [Acknowledgements](#Acknowledgements)
+
+## 🔎 Results
+
+<details>
+<summary>PBS<sup>2</sup>P achieves superior perplexity performance on WikiText2 datasets. (click to expand)</summary>
+<p align="center">
+  <img width="100%" src="figs/table1.png">
+</p>
+
+</details>
+
+## Citation
+
+If you find the code helpful in your research or work, please cite the following paper.
+
+```
+
+```
+
+## 💡 Acknowledgements
+
+This work is released under the Apache 2.0 license.
