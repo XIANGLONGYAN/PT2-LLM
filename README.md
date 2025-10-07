@@ -1,7 +1,7 @@
 # PT<sup>2</sup>-LLM: Post-Training Ternarization for Large Language Models
 
 <p align="center">
-  <a href="">
+  <a href="https://arxiv.org/abs/2510.03267">
     <img src="https://img.shields.io/badge/Paper-arXiv-red?logo=arxiv&logoSvg">
   </a>
   <a href="https://github.com/XIANGLONGYAN/PT2-LLM/releases/tag/supp/supp_v2.pdf">
