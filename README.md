@@ -62,7 +62,15 @@ LLaMA performance on 7 zero-shot Question Answering (QA) datasets. PT<sup>2</sup
 If you find the code helpful in your research or work, please cite the following paper.
 
 ```
-
+@article{yan2025pt2llmposttrainingternarizationlarge,
+      title={PT$^2$-LLM: Post-Training Ternarization for Large Language Models}, 
+      author={Xianglong Yan and Chengzhu Bao and Zhiteng Li and Tianao Zhang and Kaicheng Yang and Haotong Qin and Ruobing Xie and Xingwu Sun and Yulun Zhang},
+      year={2025},
+      eprint={2510.03267},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2510.03267}, 
+}
 ```
 
 ## 💡 Acknowledgements
