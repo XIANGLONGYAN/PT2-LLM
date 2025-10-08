@@ -10,7 +10,7 @@
   <a href="https://github.com/XIANGLONGYAN/PT2-LLM/releases/tag/paper">
     <img src="https://img.shields.io/github/downloads/XIANGLONGYAN/PT2-LLM/total.svg"> -->
   </a>
-  <a href="[https://github.com/frakenation/SODiff](https://github.com/XIANGLONGYAN/PT2-LLM)">
+  <a href="[https://github.com/XIANGLONGYAN/PT2-LLM]">
     <img src="https://visitor-badge.laobi.icu/badge?page_id=XIANGLONGYAN.PT2-LLM&right_color=violet">
   </a>
   <a href="https://github.com/XIANGLONGYAN/PT2-LLM">
