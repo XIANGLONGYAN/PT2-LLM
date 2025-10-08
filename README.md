@@ -44,7 +44,7 @@ LLaMA performance on 7 zero-shot Question Answering (QA) datasets. PT<sup>2</sup
 - [ ] Post-training ternarization
 - [ ] Models
 - [x] [Results](#Results)
-- [ ] [Citation](#Citation)
+- [x] [Citation](#Citation)
 - [x] [Acknowledgements](#Acknowledgements)
 
 ## 🔎 Results
