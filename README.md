@@ -1,4 +1,4 @@
-# PT<sup>2</sup>-LLM: Post-Training Ternarization for Large Language Models
+# [ICLR'26] PT<sup>2</sup>-LLM: Post-Training Ternarization for Large Language Models
 
 <p align="center">
   <a href="https://arxiv.org/abs/2510.03267">
@@ -19,6 +19,7 @@ Xianglong Yan, Chengzhu Bao, [Zhiteng Li](https://zhitengli.github.io), Tianao Z
 
 #### 🔥🔥🔥 News
 
+- **2026-1-26:** PT²-LLM is accepted at ICLR 2026. 🎉🎉🎉
 - **2025-9-27:** This repo is released.
 
 ---
