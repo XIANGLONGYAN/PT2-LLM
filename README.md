@@ -15,7 +15,7 @@
   </a>
 </p>
 
-[Xianglong Yan](https://xianglongyan.github.io/), Chengzhu Bao, [Zhiteng Li](https://zhitengli.github.io), Tianao Zhang, [Haotong Qin](https://htqin.github.io/), [Ruobing Xie](https://ruobingxie.github.io/), Xingwu Sun, and [Yulun Zhang](http://yulunzhang.com/), "PT²-LLM: Post-Training Ternarization for Large Language Models", arXiv, 2025
+[Xianglong Yan](https://xianglongyan.github.io/), Chengzhu Bao, [Zhiteng Li](https://zhitengli.github.io), [Tianao Zhang](https://zta20040910.github.io/), [Haotong Qin](https://htqin.github.io/), [Ruobing Xie](https://ruobingxie.github.io/), Xingwu Sun, and [Yulun Zhang](http://yulunzhang.com/), "PT²-LLM: Post-Training Ternarization for Large Language Models", ICLR, 2026
 
 #### 🔥🔥🔥 News
 
