@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+# Prepared datasets (see prepare_data.py)
+data/
+# Quantized model checkpoints, caches, logs
+output/
+cache/
+log/
+results/
+*.pt

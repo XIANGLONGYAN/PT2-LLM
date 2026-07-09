@@ -62,6 +62,106 @@ Extensive experiments demonstrate that PT<sup>2</sup>-LLM delivers competitive p
 
 ---
 
+## 🗂️ Contents
+
+- [Installation](#-installation)
+- [Data Preparation](#-data-preparation)
+- [Usage](#-usage)
+- [Code Structure](#-code-structure)
+- [Results](#-results)
+- [Citation](#-citation)
+- [Acknowledgements](#-acknowledgements)
+
+---
+
+## 🔧 Installation
+
+Requires an NVIDIA GPU.
+
+```bash
+git clone --recurse-submodules https://github.com/XIANGLONGYAN/PT2-LLM.git
+cd PT2-LLM
+
+conda create -n pt2-llm python=3.10 -y
+conda activate pt2-llm
+pip install -r requirements.txt
+
+# lm-evaluation-harness (for zero-shot accuracy, run_lm_eval.py)
+pip install -e lm-evaluation-harness
+```
+
+> **Note:** `transformers>=4.43` is required (the code passes `position_embeddings`
+> to the decoder layers, an API added in the 4.43 refactor). `sentencepiece` is
+> needed by the LLaMA/Mistral tokenizers. Both are pinned in `requirements.txt`.
+
+## 📚 Data Preparation
+
+Calibration/evaluation datasets are loaded from `$PT2_DATA_ROOT` (default `./data`).
+Download them once:
+
+```bash
+# Optional HF mirror: export HF_ENDPOINT=https://hf-mirror.com
+python prepare_data.py --data_root ./data --datasets wikitext,ptb,c4
+```
+
+## 🚀 Usage
+
+See `bash/` for ready-to-run scripts. The main entry point is `quantize.py`, which
+ternarizes a model and then reports WikiText-2 / C4 perplexity.
+
+### Ternarize (full PT2-LLM = ATQ + SSR)
+
+```bash
+CUDA_VISIBLE_DEVICES=0 python quantize.py /path/to/Llama-2-7b-hf wikitext2 atq \
+    --blocksize 128 --ssr --save
+```
+
+- Positional args: `model` `calib_dataset` `method`.
+- `method` ∈ `{atq, atq-itf, atq-aga, ternary-init, fp16}`:
+  `atq` = full ATQ (ITF + AGA); `atq-itf` = ITF only; `atq-aga` = AGA only;
+  `ternary-init` = asymmetric init only; `fp16` = no quantization.
+- `--ssr` enables Structural Similarity-based Reordering.
+- `--save` writes the fake-quantized model to `./output/`.
+
+### Perplexity / zero-shot on a saved model
+
+```bash
+# Perplexity (WikiText-2, C4)
+CUDA_VISIBLE_DEVICES=0 python run_ppl_eval.py \
+    --model_name_or_path ./output/<checkpoint>.pt --datasets wikitext2,c4 --seqlen 2048
+
+# Zero-shot accuracy on 7 QA benchmarks
+CUDA_VISIBLE_DEVICES=0 python run_lm_eval.py \
+    --model_name_or_path ./output/<checkpoint>.pt \
+    --tasks "piqa,arc_easy,arc_challenge,hellaswag,winogrande,openbookqa,boolq"
+```
+
+## 📂 Code Structure
+
+```
+quantize.py              # entry: ternarize a model (GPTQ blockwise loop) + report PPL
+run_ppl_eval.py          # evaluate perplexity of a saved model
+run_lm_eval.py           # evaluate zero-shot accuracy of a saved model
+prepare_data.py          # download calibration / evaluation datasets
+bash/                    # example scripts
+pt2_llm/
+├── quantizer.py         # ATQ: TernaryQuantizer + atq / atq_itf / atq_aga / ternary_init_only
+├── gptq.py              # GPTQ: blockwise Hessian error compensation
+├── gptq_ssr.py          # GPTQ_SSR: GPTQ + Structural Similarity-based Reordering (SSR)
+├── data.py              # calibration / evaluation data loaders
+├── model_utils.py       # find_layers, cleanup_memory, FPInputsCache
+├── eval_ppl.py          # perplexity evaluation
+└── eval_utils.py        # load a saved (ternarized) model for evaluation
+```
+
+| Paper component | Location |
+| --- | --- |
+| ATQ (ITF + AGA) + ablations | `pt2_llm/quantizer.py` (`atq`, `atq_itf`, `atq_aga`, `ternary_init_only`) |
+| SSR (column reordering) | `pt2_llm/gptq_ssr.py` (`topk_similar_columns`) |
+| GPTQ error compensation | `pt2_llm/gptq.py` |
+
+---
+
 ## 📊 Results
 
 LLaMA performance on 7 zero-shot Question Answering (QA) datasets. PT<sup>2</sup>-LLM yields the best accuracy at equal memory cost.
@@ -77,23 +177,6 @@ LLaMA performance on 7 zero-shot Question Answering (QA) datasets. PT<sup>2</sup
   <img width="100%" src="figs/table1.png" alt="Full Results Table">
 </p>
 </details>
-
----
-
-## ⚒️ TODO
-
-- [ ] Release post-training ternarization code
-- [ ] Release quantized models
-- [x] Results
-- [x] Citation
-
-## 🗂️ Contents
-
-- [ ] Post-training ternarization code
-- [ ] Pre-quantized models
-- [x] [Results](#-results)
-- [x] [Citation](#-citation)
-- [x] [Acknowledgements](#-acknowledgements)
 
 ---
 
@@ -117,4 +200,8 @@ If you find this work helpful in your research, please cite:
 
 ## 💡 Acknowledgements
 
-This work is released under the [Apache 2.0 License](LICENSE).
+This work is released under the [Apache 2.0 License](LICENSE). The code is built
+upon [ARB-LLM](https://github.com/ZHITENGLI/ARB-LLM) and
+[GPTQ](https://github.com/IST-DASLab/gptq), and uses
+[lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness) for
+zero-shot evaluation.
